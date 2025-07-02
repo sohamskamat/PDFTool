@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://percentage-calculator.web.app/sitemap.xml 
