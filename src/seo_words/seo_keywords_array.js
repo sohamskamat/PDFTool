@@ -4000,3 +4000,5 @@ const keywords = [
   "what is 98 percent of 2",
   "what is 98 percent of 60"
 ];
+
+export { keywords };

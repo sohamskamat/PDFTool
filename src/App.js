@@ -310,6 +310,11 @@ function App() {
         <footer className="footer">
           <p>&copy; 2024 Percentage Calculator. Free online tool for calculating percentage changes.</p>
         </footer>
+
+        {/* Bottom Sticky Ad Slot */}
+        <div id="ad-slot-bottom-sticky" className="ad-slot sticky-bottom">
+          <span>Bottom Sticky Ad Slot</span>
+        </div>
       </div>
     </>
   );
