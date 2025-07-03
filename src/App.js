@@ -1,6 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 import SEOKeywords from './SEOKeywords';
+import AdSenseAd from './components/AdSenseAd';
 
 const DEFAULT_TITLE = 'Percentage Calculator - Calculate Percent Increase & Decrease Online';
 const DEFAULT_DESCRIPTION = 'Free percentage calculator for increase, decrease, and change. Calculate percent difference between two values instantly. No signup required.';
@@ -211,6 +212,9 @@ function App() {
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        
+        {/* Google AdSense */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9271595483784297" crossOrigin="anonymous"></script>
       </Helmet>
 
       <div className="container">
@@ -218,9 +222,7 @@ function App() {
         <SEOKeywords />
         
         {/* Top Banner Ad Slot */}
-        <div id="ad-slot-top-banner" className="ad-slot">
-          <span>Top Banner Ad Slot</span>
-        </div>
+        <AdSenseAd adType="TOP_BANNER" />
 
         <main className="main-content">
           <div className="calculator-card">
@@ -291,9 +293,7 @@ function App() {
                 </div>
 
                 {/* Inline Ad Slot after result */}
-                <div id="ad-slot-inline" className="ad-slot">
-                  <span>Inline Ad Slot</span>
-                </div>
+                <AdSenseAd adType="INLINE" />
 
                 <button 
                   onClick={clearForm}
@@ -312,9 +312,7 @@ function App() {
         </footer>
 
         {/* Bottom Sticky Ad Slot */}
-        <div id="ad-slot-bottom-sticky" className="ad-slot sticky-bottom">
-          <span>Bottom Sticky Ad Slot</span>
-        </div>
+        <AdSenseAd adType="BOTTOM_STICKY" className="sticky-bottom" />
       </div>
     </>
   );
