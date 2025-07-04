@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { AD_UNITS, ADSENSE_SCRIPT } from '../AdSenseConfig';
+import { AD_UNITS, loadAdSenseScript, initializeAdSense } from '../AdSenseConfig';
 
 const AdSenseAd = ({ adType, className = '', style = {} }) => {
   const adRef = useRef(null);
@@ -7,22 +7,16 @@ const AdSenseAd = ({ adType, className = '', style = {} }) => {
 
   useEffect(() => {
     // Load AdSense script if not already loaded
-    if (!window.adsbygoogle) {
-      const script = document.createElement('script');
-      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      document.head.appendChild(script);
-    }
+    loadAdSenseScript();
 
     // Initialize ad when component mounts
-    if (adRef.current && window.adsbygoogle) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (error) {
-        console.error('AdSense error:', error);
+    const timer = setTimeout(() => {
+      if (adRef.current) {
+        initializeAdSense();
       }
-    }
+    }, 1000); // Small delay to ensure script is loaded
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (!adUnit) {
@@ -42,7 +36,6 @@ const AdSenseAd = ({ adType, className = '', style = {} }) => {
         data-ad-client={adUnit.id}
         data-ad-slot={adUnit.adSlot}
         data-ad-format={adUnit.format}
-        data-full-width-responsive={adUnit.responsive}
       />
     </div>
   );

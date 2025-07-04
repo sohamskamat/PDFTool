@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "pdftool-d873a"
-  }
+  },
+  "targets": {
+    "pdftool-d873a": {
+      "hosting": {
+        "main": [
+          "pdftool-d873a"
+        ],
+        "percentageconvert": [
+          "percentageconvert"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

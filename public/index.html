@@ -1,44 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Free percentage calculator for increase, decrease, and change. Calculate percent difference between two values instantly." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Percentage Calculator" />
+    <meta name="language" content="English" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.highperformanceformat.com https://pl27074557.profitableratecpm.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https://www.highperformanceformat.com https://pl27074557.profitableratecpm.com;" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Percentage Calculator - Calculate Percent Increase & Decrease Online" />
+    <meta property="og:description" content="Free percentage calculator for increase, decrease, and change. Calculate percent difference between two values instantly." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://percentageconvert.web.app" />
+    <meta property="og:site_name" content="Percentage Calculator" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Percentage Calculator - Calculate Percent Increase & Decrease Online" />
+    <meta name="twitter:description" content="Free percentage calculator for increase, decrease, and change. Calculate percent difference between two values instantly." />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://percentageconvert.web.app" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://www.highperformanceformat.com" />
+    <link rel="dns-prefetch" href="https://www.highperformanceformat.com" />
+    <link rel="preconnect" href="https://pl27074557.profitableratecpm.com" />
+    <link rel="dns-prefetch" href="https://pl27074557.profitableratecpm.com" />
+    
+    <title>Percentage Calculator - Calculate Percent Increase & Decrease Online</title>
+    
+    <!-- FAQ Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I calculate percentage increase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate percentage increase: ((New Value - Original Value) / Original Value) × 100. For example, if a price increases from $50 to $60, the percentage increase is ((60-50)/50) × 100 = 20%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate percentage decrease?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate percentage decrease: ((Original Value - New Value) / Original Value) × 100. For example, if a price decreases from $100 to $80, the percentage decrease is ((100-80)/100) × 100 = 20%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the percentage difference between two numbers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Percentage difference = |(Value1 - Value2) / ((Value1 + Value2) / 2)| × 100. This gives you the relative difference between two values as a percentage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I find what percentage one number is of another?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To find what percentage one number is of another: (Part / Whole) × 100. For example, 25 is what percentage of 100? (25/100) × 100 = 25%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I calculate percentage of a total?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To calculate percentage of a total: (Part / Total) × 100. For example, if you scored 85 out of 100 on a test, your percentage is (85/100) × 100 = 85%."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the formula for percentage change?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Percentage change = ((New Value - Old Value) / Old Value) × 100. This formula works for both increases and decreases. A positive result indicates an increase, while a negative result indicates a decrease."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I add a percentage to a number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To add a percentage to a number: Number + (Number × Percentage/100). For example, to add 15% to $100: $100 + ($100 × 15/100) = $100 + $15 = $115."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I subtract a percentage from a number?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To subtract a percentage from a number: Number - (Number × Percentage/100). For example, to subtract 20% from $100: $100 - ($100 × 20/100) = $100 - $20 = $80."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between percentage and percentage points?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A percentage is a relative value (e.g., 25% of 100 is 25). Percentage points are absolute differences (e.g., an increase from 20% to 25% is a 5 percentage point increase, not a 5% increase)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert a decimal to a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To convert a decimal to a percentage: Decimal × 100. For example, 0.25 as a percentage is 0.25 × 100 = 25%."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>

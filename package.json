@@ -4,9 +4,12 @@
   "description": "A responsive React web app for calculating percentage increase and decrease",
   "private": true,
   "dependencies": {
+    "framer-motion": "^12.23.0",
+    "lucide-react": "^0.525.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.4",
+    "react-router-dom": "^7.6.3",
     "react-scripts": "5.0.1"
   },
   "scripts": {
